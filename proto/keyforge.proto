@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+// Specify the Go package for generated code
+option go_package = "github.com/0ya-sh0/internal/proto";
+
+// Request format for getting a key
+message GetKeyRequest {
+  string key = 1; // The key for the operation
+}
+
+// Response format for getting a key
+message GetKeyResponse {
+  string key = 1; // The key for the operation
+  bytes value = 2; // The value for the operation
+}
+
+// Request format for setting a key
+message SetKeyRequest {
+  string key = 1; // The key for the operation
+  bytes value = 2; // The value for the operation
+}
+
+// Response format for setting a key
+message SetKeyResponse {
+  string key = 1; // The key for the operation
+  bytes value = 2; // The value for the operation
+}
+
+// Request format for deleting a key
+message DeleteKeyRequest {
+  string key = 1; // The key for the operation
+}
+
+// Response format for deleting a key
+message DeleteKeyResponse {
+  string key = 1; // The key for the operation
+}
+
+service KeyService {
+  rpc GetKey (GetKeyRequest) returns (GetKeyResponse);
+  rpc SetKey (SetKeyRequest) returns (SetKeyResponse);
+  rpc DeleteKey (DeleteKeyRequest) returns (DeleteKeyResponse);
+}

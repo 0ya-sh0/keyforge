@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+// Specify the Go package for generated code
+option go_package = "github.com/0ya-sh0/internal/proto";
+// This endpoint will return success if the service is healthy
+service HealthService {
+  rpc CheckHealth (google.protobuf.Empty) returns (google.protobuf.Empty);
+}
