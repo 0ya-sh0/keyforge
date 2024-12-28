@@ -50,3 +50,8 @@ test:
 .PHONY: clean
 clean:
 	rm -rf bin
+
+# Test integration
+.PHONY: itest
+itest:
+	go test ./test -v
